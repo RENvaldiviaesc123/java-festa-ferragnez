@@ -10,9 +10,34 @@ confrontare due stringhe non posso usare ==, ma devo usare il metodo equals(): e
 lasciarlo entrare o rispedirlo cortesemente da dove è venuto .
  */
 //Importiamo il nostro array
+    import java.util.Arrays;
+    import java.util.Scanner;
 
 public class CheckGuest {
     public static void main(String[] args) {
+        Scanner scanGuest = new Scanner(System.in);
+
+        //Dichiariamo il nostro array guest
+        String[] arrayGuest = {"Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti",
+        "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
+
+        //Chiediamo il nome al nostro utente
+        System.out.println("Inserisca il suo nome: ");
+        String userName = scanGuest.nextLine();
+
+        //Usiamo un ciclo for per verificare se il nome è dentro il nostro array
+
+        for (int i = 0; i < arrayGuest.length; i++) {
+                if (userName.equals(arrayGuest[i])) {
+                    System.out.println("Congratulazioni lei è invitato alla festa");
+                    break;
+                } else {
+                    System.out.println("Lei non è invitato!");
+                    break;
+                }
+        }
+
+
 
     }
 }
