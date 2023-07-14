@@ -17,7 +17,7 @@ lasciarlo entrare o rispedirlo cortesemente da dove è venuto .
 public class CheckGuest {
     public static void main(String[] args) {
         Scanner scanGuest = new Scanner(System.in);
-
+        /* METODO 1 con ciclo for
         //Dichiariamo il nostro array guest
         String[] arrayGuest = {"Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti",
         "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
@@ -26,6 +26,7 @@ public class CheckGuest {
 
         System.out.println("Inserisca il suo nome: ");
         String userName = scanGuest.nextLine();
+
 
         //Usiamo un ciclo for per verificare se il nome è dentro il nostro array
         boolean stop = false;
@@ -38,22 +39,32 @@ public class CheckGuest {
                     System.out.println("Lei non è invitato");
                 }
         }
+        */
 
-        /*
+
+        //METODO 2 con variabile booleana
+
+        String[] arrayGuest = {"Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti",
+                "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
+
+        //dichiariamo variabile booleana
         boolean stop = false;
         System.out.println("Inserisca il suo nome: ");
         String userName = scanGuest.nextLine();
-        while (!stop){
-            if (userName.equals(arrayGuest[])) {
-                stop = true;
-                System.out.println("Congratulazioni lei è invitato alla festa");
-            } else {
-                System.out.println("Lei non è invitato");
-            }
+
+        //Usiamo il nostro ciclo while
+        while (!stop) {
+
+            userName.equals(arrayGuest);
+            stop = true;
         }
-        */
+        if (!stop) {
+            System.out.println("Lei non è invitato");
+        } else {
+            System.out.println("Congratulazioni lei è invitato alla festa");
+        }
+
+        //Chiudiamo il nostro scanner
         scanGuest.close();
-
-
     }
-}
+    }
