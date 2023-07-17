@@ -11,13 +11,13 @@ lasciarlo entrare o rispedirlo cortesemente da dove è venuto .
  */
 //Importiamo il nostro array
 
-    import java.util.Arrays;
+
     import java.util.Scanner;
 
 public class CheckGuest {
     public static void main(String[] args) {
         Scanner scanGuest = new Scanner(System.in);
-        /* METODO 1 con ciclo for
+        // METODO 1 con ciclo for
         //Dichiariamo il nostro array guest
         String[] arrayGuest = {"Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti",
         "Ilary Blasi", "Bebe Vio", "Luis", "Pardis Zarei", "Martina Maccherone", "Rachel Zeilic"};
@@ -29,19 +29,23 @@ public class CheckGuest {
 
 
         //Usiamo un ciclo for per verificare se il nome è dentro il nostro array
-        boolean stop = false;
+        boolean found = false;
         for (int i = 0; i < arrayGuest.length; i++) {
-                if (userName.equals(arrayGuest[i])) {
-
-                    stop=true;
-                    System.out.println("Congratulazioni lei è invitato alla festa");
-                } else {
-                    System.out.println("Lei non è invitato");
-                }
+            //AD OGNI ITERZIONE DEL CICLO CONFRONTO IL USERNAME CON L'ARRAY
+                if(arrayGuest[i].equalsIgnoreCase(userName)){ //questo equalsignorecase tiene conto delle parole senza l'uso delle maiuscole
+                    found=true;
+                }//Non mettiamo un else perche abbiamo inizializzato il nostro boolean con false ovvero col fatto che è falso
         }
-        */
+        //Testiamo la varibile booleana
+        if(found) {
+            System.out.println("Welcome!");
+        } else {
+            System.out.println("Sorry, you're not in the list");
+        }
 
 
+
+        /*
         //METODO 2 con variabile booleana
 
         String[] arrayGuest = {"Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-Ax", "Francesco Totti",
@@ -51,18 +55,20 @@ public class CheckGuest {
         boolean stop = false;
         System.out.println("Inserisca il suo nome: ");
         String userName = scanGuest.nextLine();
-
+        int i=0;
         //Usiamo il nostro ciclo while
-        while (!stop) {
-
+        while (i<arrayGuest.length) {
             userName.equals(arrayGuest);
+            stop=true;
+        }
+        /*
+        //Ciclo FOR
+        for (int i = 0; i < arrayGuest.length; i++) {
+            userName.equals(arrayGuest[i]);
             stop = true;
-        }
-        if (!stop) {
-            System.out.println("Lei non è invitato");
-        } else {
-            System.out.println("Congratulazioni lei è invitato alla festa");
-        }
+        }*/
+
+
 
         //Chiudiamo il nostro scanner
         scanGuest.close();
